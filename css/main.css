@@ -3,6 +3,9 @@
   font-variation-settings: "FILL" 0, "wght" 500, "GRAD" 0, "opsz" 24;
 }
 /* COMMON */
+* {
+  box-sizing: border-box;
+}
 body {
   color: #333;
   font-size: 16px;
@@ -23,9 +26,30 @@ img {
   width: 1100px;
   margin: 0 auto;
   display: flex;
-  height: 120px;
 }
-
+.strong {
+  font-weight: bold;
+}
+/* Button */
+.btn {
+  display: inline-block;
+  padding: 6px 20px;
+  box-sizing: border-box;
+  border: 2px solid currentColor;
+  border-radius: 5px;
+  font-size: 15px;
+}
+.btn--light-green {
+  color: #076444;
+  border-color: #076444;
+  transition: 0.6s;
+}
+.btn--light-green:hover {
+  background-color: #076433;
+  border-color: #076433;
+  color: white;
+  text-decoration: underline;
+}
 /* Header */
 header {
   position: fixed;
@@ -35,6 +59,9 @@ header {
   border-top: 2px solid black;
   border-bottom: 1px solid #eae7e2;
   z-index: 1;
+}
+header .inner {
+  height: 120px;
 }
 header .inner .logo {
   height: 75px;
@@ -94,7 +121,7 @@ header .inner .sub-menu .search > input::placeholder {
 }
 header .inner .sub-menu .search > input {
   position: relative;
-  width: 8px;
+  width: 38px;
   border: 1px solid #ccc;
   border-radius: 5px;
   outline: none;
@@ -142,12 +169,26 @@ header .inner .main-menu .item .item__contents {
 header .inner .main-menu .item:hover .item__contents {
   display: block;
 }
-
+header .inner .main-menu .item:hover .item__contents {
+}
 header .inner .main-menu .item .item__contents .item__contents__menu .inner {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   height: auto;
   padding: 20px 0;
+}
+
+header
+  .inner
+  .main-menu
+  .item
+  .item__contents
+  .item__contents__menu
+  .inner
+  > li {
+  /* width: 220px; 가로값 주는 대신 밑에처럼 진행해도 됨*/
+  flex-grow: 0;
+  flex-basis: 220px;
 }
 header
   .inner
@@ -211,4 +252,230 @@ header
   > li:hover
   > a {
   text-decoration: underline;
+}
+/* Badges */
+header .badges {
+  position: absolute;
+  left: calc(1100px + (100vw - 1100px) / 2);
+  top: 150px;
+  z-index: 2;
+}
+header .badges .badge {
+  cursor: pointer;
+}
+header .badges .badge img {
+  width: 140px;
+}
+
+@media screen and (max-width: 1400px) {
+  /* 1400px 이하일때 */
+  header .badges {
+    left: calc(100vw - 150px);
+  }
+}
+/* Slide */
+.visual {
+  background-image: url("../images/visual_bg.jpg");
+  background-size: cover;
+  /* background-size: 106% 100%; */
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: 120px;
+  height: 34vw;
+  width: 100vw;
+}
+.visual .inner {
+  position: relative;
+  height: 34vw;
+  width: 80%;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+.visual .inner .slogan {
+  position: absolute;
+  width: 18vw;
+  height: 19vw;
+  top: 23%;
+  left: 5%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.visual .inner .slogan img {
+  width: 100%;
+}
+
+.visual .inner .item1 {
+  position: absolute;
+  width: 15vw;
+  top: 17%;
+  right: 45%;
+}
+.visual .inner .item2 {
+  position: absolute;
+  width: 17vw;
+  top: 34%;
+  right: 31%;
+}
+.visual .inner .item3 {
+  position: absolute;
+  width: 16vw;
+  top: 27%;
+  right: 17%;
+}
+
+/* Notice */
+.notice {
+}
+.notice .notice-line {
+  display: flex;
+}
+.notice .notice-line .bg-left {
+  position: relative;
+  background-color: #111;
+  width: 55%;
+  height: 62px;
+}
+.notice .notice-line .bg-right {
+  position: relative;
+  background-color: #f6f5ef;
+  width: 45%;
+  height: 62px;
+}
+.notice .notice-line {
+  height: 100%;
+  justify-content: space-between;
+}
+.notice .notice-line .inner__left {
+  position: absolute;
+  right: 0;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  width: 70%;
+  height: 100%;
+}
+.notice .notice-line .inner__left h1 {
+  font-weight: 600;
+}
+.notice .notice-line .inner__left div {
+  margin-left: 20px;
+}
+.notice .notice-line .inner__left a {
+  position: absolute;
+  right: 3%;
+}
+.notice .notice-line .inner__left a span {
+  color: #fff;
+  font-size: 40px;
+  line-height: 1.2;
+}
+.notice .notice-line .inner__right {
+  position: absolute;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  height: 100%;
+  color: black;
+}
+.notice .notice-line .inner__right h1 {
+  font-weight: 600;
+  margin-right: 18%;
+}
+.notice .notice-line .inner__right a {
+}
+.notice .notice-line .inner__right a span {
+  color: black;
+  font-size: 40px;
+  line-height: 1.2;
+}
+/* Reward */
+.rewards {
+  position: relative;
+  background: #1e3932;
+  color: white;
+}
+.rewards .inner {
+  padding: 30px 0 40px 0;
+  display: flex;
+}
+.rewards .inner a.rewards__logo {
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  flex-basis: 260px;
+}
+
+.rewards .inner a.rewards__logo img {
+  display: block;
+  width: 176px;
+}
+.rewards .inner .rewards__items {
+  flex-grow: 1;
+}
+.rewards .inner .rewards__items .rewards__items__register {
+  position: relative;
+  padding-bottom: 12px;
+  box-shadow: 0 0.5px #4b615b;
+  right: 0;
+}
+
+.rewards .inner .rewards__items .rewards__items__register p {
+  display: block;
+  font-size: 17px;
+}
+.rewards .inner .rewards__items .rewards__items__register p.subject {
+  margin-bottom: 12px;
+  font-size: 26px;
+}
+
+.rewards .inner .rewards__items .rewards__items__register .buttons {
+  position: absolute;
+  right: 0;
+  bottom: 12px;
+}
+.rewards
+  .inner
+  .rewards__items
+  .rewards__items__register
+  .buttons
+  .btn--register {
+  background-color: #00704a;
+  border-color: #00704a;
+  color: white;
+  margin-right: 6px;
+}
+.rewards .inner .rewards__items .buttons .btn--login {
+  border-color: white;
+  color: white;
+}
+
+.rewards
+  .inner
+  .rewards__items
+  .rewards__items__register
+  .buttons
+  .btn--register:hover,
+.rewards .inner .rewards__items .buttons .btn--login:hover {
+  text-decoration: underline;
+}
+
+.rewards .inner .rewards__items .rewards__items__card {
+  position: relative;
+}
+.rewards .inner .rewards__items .rewards__items__card p {
+  display: block;
+  font-size: 14px;
+  color: white;
+  margin-top: 12px;
+}
+.rewards .inner .rewards__items .rewards__items__card .buttons {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.rewards .inner .rewards__items .rewards__items__card .buttons .btn--login {
 }
