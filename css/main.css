@@ -12,6 +12,10 @@ body {
   font-weight: 400;
   line-height: 1.4;
   font-family: "Nanum Gothic", sans-serif;
+  overflow-x: hidden;
+}
+section {
+  width: 100vw;
 }
 a {
   text-decoration: none;
@@ -50,6 +54,50 @@ img {
   color: white;
   text-decoration: underline;
 }
+.btn--brown {
+  color: #633510;
+  border-color: #633510;
+  transition: 0.6s;
+}
+.btn--brown:hover {
+  background-color: #633510;
+  color: white;
+  text-decoration: underline;
+}
+.btn--gold {
+  border-color: #966932;
+  color: #966932;
+  transition: 0.6s;
+  cursor: pointer;
+}
+.btn--gold:hover {
+  background-color: #966932;
+  color: white;
+  text-decoration: underline;
+}
+.btn--white {
+  border-color: white;
+  color: white;
+  transition: 0.6s;
+  cursor: pointer;
+}
+.btn--white:hover {
+  background-color: white;
+  color: black;
+  text-decoration: underline;
+}
+.btn--black {
+  border-color: black;
+  color: black;
+
+  cursor: pointer;
+}
+.btn--black:hover {
+  background-color: black;
+  color: white;
+  transition: 0.6s;
+  text-decoration: underline;
+}
 /* Header */
 header {
   position: fixed;
@@ -58,7 +106,7 @@ header {
   background-color: #f6f5ef;
   border-top: 2px solid black;
   border-bottom: 1px solid #eae7e2;
-  z-index: 1;
+  z-index: 5;
 }
 header .inner {
   height: 120px;
@@ -399,7 +447,7 @@ header .badges .badge img {
   color: white;
 }
 .rewards .inner {
-  padding: 30px 0 40px 0;
+  padding: 30px 30px 40px;
   display: flex;
 }
 .rewards .inner a.rewards__logo {
@@ -422,7 +470,6 @@ header .badges .badge img {
   box-shadow: 0 0.5px #4b615b;
   right: 0;
 }
-
 .rewards .inner .rewards__items .rewards__items__register p {
   display: block;
   font-size: 17px;
@@ -431,7 +478,6 @@ header .badges .badge img {
   margin-bottom: 12px;
   font-size: 26px;
 }
-
 .rewards .inner .rewards__items .rewards__items__register .buttons {
   position: absolute;
   right: 0;
@@ -477,5 +523,301 @@ header .badges .badge img {
   right: 0;
   bottom: 0;
 }
-.rewards .inner .rewards__items .rewards__items__card .buttons .btn--login {
+
+/* Elsalvador */
+.elsalvador {
+  position: relative;
+  height: 530px;
+  background-image: url("../images/elsalvador_bg.jpg");
+  /* background-size: 105%; */
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+.elsalvador .inner {
+  position: relative;
+  width: 80%;
+  max-width: 1100px;
+  height: inherit;
+}
+.elsalvador .inner .elsalvador__item {
+  position: absolute;
+  top: 80px;
+  transform: translateX(-100%);
+  left: 15%;
+  width: 18vw;
+  max-width: 300px;
+  opacity: 0;
+  transition: 2.5s;
+}
+.elsalvador .inner .elsalvador__contents {
+  position: absolute;
+  top: 170px;
+  transform: translateX(100%);
+  right: 22%;
+  width: 18vw;
+  opacity: 0;
+  transition: 2.5s;
+}
+.elsalvador:active .inner .elsalvador__item,
+.elsalvador:active .inner .elsalvador__contents {
+  opacity: 1;
+  transform: translateX(0);
+}
+.elsalvador .inner .elsalvador__contents .item-text {
+  margin-bottom: 13%;
+}
+
+/* ethiopia */
+
+.ethiopia {
+  position: relative;
+  height: 400px;
+  background-image: url("../images/ethiopia_bg.png");
+  background-size: cover;
+  overflow: hidden;
+}
+.ethiopia::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url("../images/ethiopia_before.png");
+  height: 100%;
+  width: 600px;
+  opacity: 0;
+
+  background-repeat: no-repeat;
+}
+.ethiopia::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-image: url("../images/ethiopia_after.png");
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 350px;
+  opacity: 0;
+}
+.ethiopia .inner {
+  position: relative;
+  width: 80%;
+  height: 400px;
+}
+.ethiopia .inner .ethiopia__contents {
+  position: absolute;
+  left: 10%;
+  top: 45%;
+  transform: translateY(-50%);
+  z-index: 1;
+  opacity: 0;
+  transition: 3s;
+  transition-delay: 0.5s;
+}
+.ethiopia .inner .ethiopia__item {
+  position: absolute;
+  left: -400px;
+  opacity: 0;
+  transition: 2.5s;
+  transition-delay: 0.75s;
+}
+.ethiopia .inner .ethiopia__contents > a.btn {
+  margin-top: 40px;
+  position: absolute;
+  z-index: 2;
+  left: 250px;
+}
+.ethiopia:active::before,
+.ethiopia:active::after {
+  opacity: 1;
+  transition: 1.5s;
+}
+.ethiopia:active .inner .ethiopia__item,
+.ethiopia:active .inner .ethiopia__contents {
+  opacity: 1;
+}
+/* Favorite */
+
+.favorite {
+  height: 800px;
+  background-image: url("../images/fav_bg.png");
+  background-attachment: fixed;
+  background-size: 115% 100%;
+  background-position: 60% center;
+  background-repeat: no-repeat;
+}
+.favorite .inner {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.favorite .inner .favorite__contents {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.favorite .inner .favorite__contents .favorite_text1 {
+  display: block;
+  width: 15.5vw;
+  margin-bottom: 40px;
+}
+.favorite .inner .favorite__contents > img {
+  transition: 2s;
+  opacity: 0;
+  transform: translate(-100%);
+}
+.favorite:active .inner .favorite__contents > img {
+  opacity: 1;
+  transform: translate(0);
+}
+.favorite .inner .favorite__contents a {
+  margin-top: 40px;
+}
+
+.favorite .inner .favorite__items {
+  position: absolute;
+  top: 0%;
+  right: -250px;
+  width: 80%;
+}
+.favorite .inner .favorite__items img {
+  width: 100%;
+}
+/* Magazine */
+.magazine {
+  position: relative;
+  background-image: url("../images/magazine_bg.png");
+  background-size: 120%;
+  background-position: center 100%;
+  background-repeat: no-repeat;
+  height: 400px;
+  width: 100vw;
+}
+.magazine .inner {
+  height: inherit;
+  width: 80%;
+}
+.magazine .inner::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 14%;
+  transform: translateY(-50%);
+  background-image: url("../images/magazine_img.png");
+  background-repeat: no-repeat;
+  background-position: -10% 0%;
+  width: 350px;
+  height: 400px;
+  transition: 1.5s;
+  opacity: 0;
+}
+.magazine .inner .magazine__contents {
+  position: absolute;
+  top: 55%;
+  transform: translateY(-50%);
+  left: 12%;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.magazine .inner .magazine__contents > a {
+  margin-top: 30px;
+}
+.magazine .inner .magazine__contents img {
+}
+.magazine:active .inner::after {
+  content: "";
+  opacity: 1;
+}
+/* STORE */
+.store {
+  position: relative;
+  width: 100vw;
+  height: 400px;
+  background-image: url("../images/store_bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+.store .inner {
+  width: 80%;
+  height: inherit;
+}
+.store .inner .store__text1 {
+  position: absolute;
+  width: 385px;
+  top: 100px;
+  right: 50px;
+  transform: translateX(800px);
+  opacity: 0;
+  transition: 2s;
+}
+.store .inner .store__text2 {
+  position: absolute;
+  width: 366px;
+  top: 170px;
+  right: 69px;
+  transform: translateX(800px);
+  opacity: 0;
+  transition: 2.5s;
+}
+.store .inner .store__img1 {
+  position: absolute;
+  width: 366px;
+  top: 0;
+  left: 70px;
+  opacity: 0;
+  transition: 1.5s;
+}
+.store .inner .store__img2 {
+  position: absolute;
+  width: 228px;
+  top: 150px;
+  left: 300px;
+  opacity: 0;
+  transition: 1.5s;
+}
+.store .inner .store__img3 {
+  position: absolute;
+  width: 348px;
+  top: -60px;
+  left: 430px;
+  opacity: 0;
+  transition: 1.5s;
+}
+.store .inner .store__img4 {
+  position: absolute;
+  width: 230px;
+  right: -70px;
+  bottom: 0;
+  opacity: 0;
+  transition: 1.5s;
+}
+.store .inner .btn.btn--black {
+  position: absolute;
+  top: 290px;
+  right: 330px;
+  transform: translateX(800px);
+}
+.store:active .inner .store__img1,
+.store:active .inner .store__img2,
+.store:active .inner .store__img3,
+.store:active .inner .store__img4,
+.store:active .inner .store__text1,
+.store:active .inner .store__text2 {
+  opacity: 1;
+}
+.store:active .inner .store__text1,
+.store:active .inner .store__text2 {
+  transform: translateX(0);
+}
+
+.store:active .inner .btn.btn--black {
+  transform: translateX(0);
+  transition: transform 3s, background-color 0.6s, color 0.6s,
+    text-decoration 0.6s;
 }
